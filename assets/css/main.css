@@ -513,6 +513,27 @@
 		width: 90%;
 	}
 
+		#header img {
+			display: inline;
+			margin: 0 auto;
+			height: 233px;
+			width: auto;
+			position: relative;
+			top:-23px;
+		}
+
+		.circle {
+			width: 150px;
+			height: 150px;
+			position: relative;
+			overflow: hidden;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			-ms-border-radius: 50%;
+			-o-border-radius: 50%;
+			border-radius: 50%;
+			display: -webkit-inline-box;
+		}
 		#header h1 {
 			font-size: 4.35em;
 			font-weight: 900;
