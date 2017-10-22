@@ -33,13 +33,13 @@
           <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav mr-auto">
               <!-- TemplateBeginEditable name="navbar" -->
-              <li class="active"><a href="myliteracy/index.html">Home</a></li>
-              <li><a href="myliteracy/genesis.html">Genesis</a></li>
-              <li><a href="myliteracy/firststeps.html">First Steps</a></li>
-              <li><a href="myliteracy/exploration.html">Exploration</a></li>
-              <li><a href="myliteracy/thecrowd.html">The Crowd</a></li>
-              <li><a href="myliteracy/advanced.html">Advancement</a></li>
-              <li><a href="myliteracy/references.html">References</a></li>
+              <li class="active"><a href="/myliteracy">Home</a></li>
+              <li><a href="genesis.html">Genesis</a></li>
+              <li><a href="firststeps.html">First Steps</a></li>
+              <li><a href="exploration.html">Exploration</a></li>
+              <li><a href="thecrowd.html">The Crowd</a></li>
+              <li><a href="advanced.html">Advancement</a></li>
+              <li><a href="references.html">References</a></li>
               <!-- TemplateEndEditable -->
             </ul>
           </div>
