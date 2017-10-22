@@ -71,13 +71,12 @@
   <!-- InstanceBeginEditable name="body" -->
     <script src="js/references.js"></script>
     <script>
-      sorted_keys = Object.keys(references).sort();
       var i = 1;
-      for (var reference in sorted_keys){
+      for (var reference in sorted_ref){
         row = document.createElement('TR')
         data = document.createElement('TD');
         data.id = i;
-        data.innerHTML = references[sorted_keys[reference]];
+        data.innerHTML = references[sorted_ref[reference]];
         row.appendChild(data);
         document.getElementById('references').appendChild(row);
         i++;

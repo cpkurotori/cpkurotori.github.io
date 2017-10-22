@@ -24,3 +24,33 @@ strong{
   font-size: .7em;
   color: blue;
 }
+
+.typed-cursor {
+        opacity: 1;
+        animation: blink .7s infinite;
+    }
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+#lionking-textbox{
+  display: inline;
+  width: 100px;
+}
+
+@media screen and (max-width:767px){    
+    #spotify {display:none;}
+}
+
+@media screen and (max-width:1200px){    
+    #spotify {width: 220px;}
+}

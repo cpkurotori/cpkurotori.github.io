@@ -53,7 +53,18 @@
       </div>
       <div class="panel panel-primary">
         <div class="panel-body">
-          <h2 class="letter">I</h2> was born in 1995, about fifteen years after the start of the Digital Revolution<a href="references.html#25" class="reference">[1]</a>. Although I have seem many changes and improvements to technology, I will never know of a time without computers. With that being said, computers and technology have been an integral part of my life since I was a child. Throughout my life, there is one story that my dad keep's bringing up. When I was 3 years old, we had a family computer in the living room that my mom, my dad, and my sister used. On this large desktop, running Windows 95, my dad had downloaded a program called Napster. This program/service had a database of music that was able to be downloaded for free to any personal computer. Being the child that I was, loving the Disney movies that we had on VHS tapes, I really wanted to download the soundtrack of <i>The Lion King</i>. <a href="#" title="Just a Reminder..." data-toggle="popover" data-trigger="hover" data-content="I was a 3 year old child that could barely talk and couldn't read." data-placement="top">Just a reminder... (Hover over me!)</a> 
+          <div class="row">
+            <div class="col-sm-8">
+              <h2 class="letter">I</h2> was born in 1995, about fifteen years after the start of the Digital Revolution<a href="references.html#25" class="reference">[1]</a>. Although I have seen many changes and improvements to technology, I will never know of a time without computers. With that being said, computers and technology have been an integral part of my life since I was a child. Throughout my life, there is one story that my dad keeps bringing up. When I was 3 years old, we had a family computer in the living room that my mom, my dad, and my sister used. On this large desktop, running Windows 95, my dad had downloaded a program called Napster. This program/service had a database of music that was able to be downloaded for free to any personal computer. Being the child that I was, loving the Disney movies that we had on VHS tapes, I really wanted to download the soundtrack of <i>The Lion King</i>. <a href="#" title="With song in my heart..." data-toggle="popover" data-trigger="hover" data-content="I still have song in my heart. As I sit here writing this, I am listening to the Lion King soundtrack and joyfully singing 🎶 Hakuna Matata. It means no worries for the rest of your days 🎶" data-placement="top">With song in my heart</a>, I took to the computer and attempted to download the soundtrack. Using my comparative skills, I looked at the VHS box and the computer keyboard, and carefully typed out <div id="lionking-textbox" class="form-control input-sm"><span id="lionking" type="typing" value="LION KING"></span></div>
+              <br><br>
+              Let me just say that my parent's weren't in the room when this was happening and in fact, they didn't realize that it was I who had downloaded the soundtrack of <i>The Lion King</i>. Initially, when my dad saw that the music had been downloaded, he assumed that my mom was the one to download it for me, however, upon asking if it was her, she told him that she had not. He then went on to question my sister to which she replied, "I didn't download it." Then my dad realized, after noticing the VHS box sitting next to the computer, that it was his little 3-year-old toddler who had used the computer to download the music he wanted, without even knowing how to read. It was from this moment that my parents first saw the computer literacy that I was beginning to develop.
+            </div>
+            <div class="col-sm-4 text-center">
+              <iframe id="spotify" src="https://open.spotify.com/embed/album/3YA5DdB3wSz4pdfEXoMyRd" width="380" height="300px" frameborder="0" allowtransparency="true"></iframe>
+            </div>
+          </div>
+          <br>
+          Hello
         </div>
       </div>
       <div class="text-center">
@@ -71,8 +82,19 @@
   <!-- InstanceBeginEditable name="body" -->
     <script>
     $(document).ready(function(){
-      $('[data-toggle="popover"]').popover();   
+      $('[data-toggle="popover"]').popover();
+      $('')
     });
+    </script>
+    <script src="js/typed.min.js"></script>
+    <script>
+      $('[type="typing"]').each(function(){
+        var typed = new Typed('#'+this.id, {
+          strings : [this.attributes[2].value],
+          typeSpeed: 1000,
+          loop: true
+        });
+      });
     </script>
   <!-- InstanceEndEditable -->
   </body>
