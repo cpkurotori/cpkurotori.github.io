@@ -13,6 +13,10 @@ strong{
   font-weight: 300;
 }
 
+footer{
+  padding: 40px;
+}
+
 .letter{
   font-size: 3em;
   display: inline;
@@ -29,6 +33,16 @@ strong{
         opacity: 1;
         animation: blink .7s infinite;
     }
+
+.jumbotron{
+  background-color: #337ab7;
+  border-color: #2e6da4;
+  color: white;
+}
+
+.primary {
+  color: #337ab7;
+}
 
 @keyframes blink {
     0% {
