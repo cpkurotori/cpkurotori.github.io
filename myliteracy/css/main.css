@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body{
+  font-family: 'Raleway', sans-serif;
+}
+
+h1{
+  font-family: 'Indie Flower', cursive;
+}
+
+strong{
+  font-weight: 300;
+}
+
+.letter{
+  font-size: 3em;
+  display: inline;
+}
+
+.reference{
+  position: relative;
+  top: 3px;
+  font-size: .7em;
+  color: blue;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- TemplateBeginEditable name="doctitle" -->
+	<title>My Literacy</title>
+	<!-- TemplateEndEditable -->
+	<!-- Bootstrap -->
+	<link href="../css/bootstrap.css" rel="stylesheet">
+  <link href="../css/main.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Raleway" rel="stylesheet">
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+  <!-- TemplateBeginEditable name="head" -->
+  <!-- TemplateEndEditable -->
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+          <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbar">
+            <ul class="nav navbar-nav mr-auto">
+              <!-- TemplateBeginEditable name="navbar" -->
+              <li class="active"><a href="myliteracy/index.html">Home</a></li>
+              <li><a href="myliteracy/genesis.html">Genesis</a></li>
+              <li><a href="myliteracy/firststeps.html">First Steps</a></li>
+              <li><a href="myliteracy/exploration.html">Exploration</a></li>
+              <li><a href="myliteracy/thecrowd.html">The Crowd</a></li>
+              <li><a href="myliteracy/advanced.html">Advancement</a></li>
+              <li><a href="myliteracy/references.html">References</a></li>
+              <!-- TemplateEndEditable -->
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- TemplateBeginEditable name="jumbotron" -->
+      <div class="jumbotron text-center">
+        <h1>Title</h1>
+        <h2>Subtitle</h2>
+      </div>
+      <!-- TemplateEndEditable -->
+      <!-- TemplateBeginEditable name="container" -->
+      <div class="panel panel-primary">
+        <div class="panel-body">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin accumsan placerat magna, in dictum quam auctor id. Cras cursus ornare elit nec vehicula. Integer eu facilisis odio, sed egestas risus. Vivamus ullamcorper libero eros, quis varius lorem sodales ac. In consectetur elit velit, quis tincidunt leo feugiat in. Sed et orci quam. Fusce scelerisque vehicula ligula ac sagittis. Vestibulum euismod vestibulum leo, in consequat quam lacinia vitae. Quisque laoreet dolor placerat, elementum lorem et, mollis sapien. Vivamus eget gravida mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. In efficitur semper cursus. Sed pharetra lectus efficitur odio aliquet feugiat.
+          <br><br>
+          <div class="row">
+            <div class="col-sm-8">
+              Aenean in tellus erat. Suspendisse a accumsan neque, ut efficitur diam. Nulla tincidunt efficitur felis a facilisis. Ut a massa vel diam sagittis pharetra. Praesent consectetur, nisi vitae molestie rhoncus, magna tortor accumsan lacus, quis convallis tortor lorem ac ex. Nullam sit amet egestas turpis. Aliquam ullamcorper eros neque. Suspendisse potenti. Vestibulum nec blandit tellus, sit amet venenatis ipsum. Aliquam vitae magna a neque auctor malesuada.Proin sollicitudin interdum efficitur. Nullam euismod, mi et eleifend consectetur, massa augue feugiat quam, non egestas nulla risus vitae ante. Morbi ac consectetur velit. Praesent aliquet tristique rutrum. 
+            </div>
+            <div class="col-sm-4">
+              Duis auctor pulvinar turpis eget scelerisque. Etiam egestas sit amet erat vel porta. Donec euismod tellus tellus, sollicitudin lacinia nunc auctor sed.U t suscipit, velit sed pellentesque auctor, mi nulla varius nunc, in pharetra augue purus ut nunc. Donec at velit sit amet leo gravida feugiat. 
+            </div>
+          </div>
+          <br>
+          Duis aliquam, dolor sed eleifend rhoncus, risus ligula ornare ligula, eu gravida risus dolor et lectus. Ut viverra sem quis mi rhoncus, at vulputate ex luctus. Etiam aliquet, massa in bibendum tristique, dui dui pretium arcu, in posuere lacus augue in augue. Aliquam eu congue felis. Proin sed odio consectetur, lacinia ex id, elementum ex. Phasellus ut imperdiet velit, sit amet congue eros. Sed molestie enim a ullamcorper congue.
+          <br><br>
+          In ac mi consequat, aliquam tortor id, ultricies sapien. Aenean interdum scelerisque venenatis. Aenean in lacinia purus, at fermentum est. Aliquam libero erat, volutpat sed congue et, commodo et ligula. Mauris mattis consectetur sem in ultricies. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et hendrerit lectus. Duis finibus suscipit massa, ut viverra tellus consequat et. Duis hendrerit mi nec nulla porttitor, vitae tristique mi consectetur. Aenean et orci faucibus, varius dui eget, vehicula ex. Quisque pellentesque rutrum sem, eget pulvinar magna accumsan ac.
+        </div>
+      </div>
+      <!-- TemplateEndEditable -->
+      <!-- TemplateBeginEditable name="bottom" -->
+      <div class="text-center">
+        <a class="btn btn-primary" href="myliteracy/#">Next</a><br>
+        <p>Click this button to continue to the next page.</p>
+      </div>
+      <!-- TemplateEndEditable -->
+    </div>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="../js/jquery-1.11.3.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed --> 
+	<script src="../js/bootstrap.js"></script>
+  <!-- TemplateBeginEditable name="body" -->
+  <!-- TemplateEndEditable -->
+  </body>
+</html>
