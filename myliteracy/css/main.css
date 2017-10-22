@@ -68,3 +68,13 @@ footer{
 @media screen and (max-width:1200px){    
     #spotify {width: 220px;}
 }
+
+#checkin{
+  width: 100%;
+  max-width: 375px;
+}
+
+td.reference-indent{
+  padding-left: 2em !important;
+  text-indent: -2em;
+}

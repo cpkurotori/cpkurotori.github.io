@@ -67,7 +67,11 @@
     </footer>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
 	<script src="js/jquery-1.11.3.min.js"></script>
-
+  <script>
+  $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip(); 
+  });
+  </script>
 	<!-- Include all compiled plugins (below), or include individual files as needed --> 
 	<script src="js/bootstrap.js"></script>
   <!-- InstanceBeginEditable name="body" -->
@@ -79,6 +83,7 @@
         data = document.createElement('TD');
         data.id = i;
         data.innerHTML = references[sorted_ref[reference]];
+        data.className="reference-indent";
         row.appendChild(data);
         document.getElementById('references').appendChild(row);
         i++;
