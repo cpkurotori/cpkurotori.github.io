@@ -33,7 +33,7 @@
           <div class="collapse navbar-collapse" id="navbar">
             <ul class="nav navbar-nav mr-auto">
               <!-- TemplateBeginEditable name="navbar" -->
-              <li class="active"><a href="/myliteracy">Home</a></li>
+              <li class="active"><a href="index.html">Home</a></li>
               <li><a href="genesis.html">Genesis</a></li>
               <li><a href="firststeps.html">First Steps</a></li>
               <li><a href="exploration.html">Exploration</a></li>
