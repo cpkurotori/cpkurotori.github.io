@@ -130,7 +130,7 @@ textarea {
 
 .line-start {
     vertical-align: top;
-    width: 50px;
+    width: 120px;
 }
 
 a {
@@ -147,6 +147,10 @@ a:visited {
 
 .center {
     text-align: center;
+}
+
+.dir {
+    color: #5cb85c;
 }
 
 h1, h2, h3, h4, h5, h6, p, a, input {

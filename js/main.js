@@ -32,7 +32,7 @@ class TrieNode {
     autocomplete(prefix) {
         var node = this;
         for (var char in prefix) {
-            console.log(prefix[char]);
+            // console.log(prefix[char]);
             var letter = prefix[char];
             if (!Object.keys(node.children).includes(letter)) {
                 return [];
@@ -45,6 +45,68 @@ class TrieNode {
             words.push(prefix+posts[word]);
         }
         return words;
+    }
+}
+
+class Directory {
+    constructor(name, parent=this) {
+        this.name = name;
+        this.members = {'..':parent, '.':this};
+    }
+
+    mkdir(name) {
+        this.members[name] = new Directory(name+'/', this);
+        return this.members[name];
+    }
+
+    get(dir="") {
+        if (dir == "") {
+            return HOME;
+        } else {
+            // console.log(dir);
+            var dir_path = dir.split('/');
+            // console.log(dir_path);
+            var cur = CUR_DIR;
+            while (dir_path.length > 0 && cur) {
+                cur = cur.members[dir_path[0]];
+                dir_path = dir_path.slice(1);
+            }
+            return cur;
+        }
+    }
+
+    createFile(name, content) {
+        this.members[name] = new File(this, name, content);
+        return this.members[name];
+    }
+
+    createLink(name, url) {
+        this.members[name] = new Link(this, name, url);
+        return this.members[name];
+    }
+}
+
+class File {
+    constructor(parent, name, content) {
+        this.parent = parent;
+        this.name = name;
+        this.content = content;
+    }
+
+    open() {
+        print_file(this.content);
+    }
+}
+
+class Link extends File {
+    constructor(parent, name, url) {
+        super(parent, name, "This is a link. Please open using `open "+name+'`');
+        this.url = url;
+    }
+
+    open() {
+        createLine("Opening "+this.name+"...", {'color':'#30a0ff'});
+        window.open(this.url);
     }
 }
 
@@ -72,7 +134,7 @@ $(window).resize(function () {
 
 
 function keypress(event) {
-    // console.log(event);
+    // // console.log(event);
     if (event.keyCode == 13) {
         enter();
         event.preventDefault();
@@ -84,7 +146,7 @@ function keypress(event) {
 }
 
 function keydown(event) {
-    console.log(event);
+    // console.log(event);
     if (event.keyCode == 38) {
         arrowUp();
         event.preventDefault();
@@ -102,7 +164,7 @@ function keydown(event) {
 }
 
 function arrowUp() {
-    // console.log("back");
+    // // console.log("back");
     var current = $("#cli").val().trim();
     var back = HISTORY.pop();
     if (back == "") {
@@ -115,7 +177,7 @@ function arrowUp() {
 
 
 function arrowDown() {
-    // console.log("forward");
+    // // console.log("forward");
     var current = $("#cli").val().trim();
     var back = TEMP_BACK_HISTORY.pop();
     if (back == "") {
@@ -159,11 +221,11 @@ function getCompletion() {
         PREDICTING = false;
         return '';
     }
-    console.log(predictions);
-    console.log(PREDICTIONS);
-    console.log(PREDICTING);
-    console.log(PRED_VALUE);
-    console.log(TAB_COUNT);
+    // console.log(predictions);
+    // console.log(PREDICTIONS);
+    // console.log(PREDICTING);
+    // console.log(PRED_VALUE);
+    // console.log(TAB_COUNT);
     return PREDICTIONS[TAB_COUNT - 1];
 }
 
@@ -189,11 +251,11 @@ function getBackCompletion() {
         PREDICTING = false;
         return '';
     }
-    console.log(predictions);
-    console.log(PREDICTIONS);
-    console.log(PREDICTING);
-    console.log(PRED_VALUE);
-    console.log(TAB_COUNT);
+    // console.log(predictions);
+    // console.log(PREDICTIONS);
+    // console.log(PREDICTING);
+    // console.log(PRED_VALUE);
+    // console.log(TAB_COUNT);
     return PREDICTIONS[TAB_COUNT - 1];
 }
 
@@ -235,12 +297,9 @@ function createCLI() {
                     'spellcheck' : false,
                     'data-gramm_editor' : false,
                     'wrap' : 'soft'};
-    var html_options = '';
-    for (option in options) {
-        html_options += ' '+option+'="'+options[option]+'"';
-    }
-    var line_start = "<td class=\"line-start\" row=\"+row+\">&gt&gt&gt&gt&nbsp&nbsp&nbsp</td>"
-    var cli = "<td class=\"cli\" row=\"+row+\" id=\"cli-td\"><textarea id=\"cli\""+html_options+"></textarea></td>"
+
+    var line_start = "<td class=\"line-start\" row="+row+">"+(USER+':'+CUR_DIR.name)+"$</td>";
+    var cli = "<td class=\"cli\" row="+row+" id=\"cli-td\"><textarea id=\"cli\""+optionsToHTML(options)+"></textarea></td>"
     var child = "<tr>"+line_start+cli+"</tr>";
     $('#cli-table tbody').append(child);
     $('#cli').each(function () {
@@ -252,16 +311,37 @@ function createCLI() {
     $('#cli').focus();
 }
 
-function createLine(value = " ") {
+function createLine(value = " ", options = {}) {
     COUNT++;
     if (COUNT > MAX_COUNT) {
         deleteTop();
     }
     var row = getNextRow();
-    $('#cli-table tbody').append("<tr><td class=\"line-start\" row="+row+"></td><td row="+row+">"+value+"</td></tr>");
+    // console.log("<tr><td"+optionsToStyle(options)+" colspan=2 row="+row+">"+value+"</td></tr>");
+    $('#cli-table tbody').append("<tr><td"+optionsToStyle(options)+" colspan=2 row="+row+">"+value+"</td></tr>");
 
 }
 
+
+function optionsToHTML(options) {
+    html_options = '';
+    for (option in options) {
+        html_options += ' '+option+'="'+options[option]+'"';
+    }
+    return html_options;
+}
+
+function optionsToStyle(options) {
+    if (Object.keys(options).length == 0) {
+        return '';
+    }
+    styles = ' style=" ';
+    for (option in options) {
+        styles += option+':'+options[option]+';';
+    }
+    // console.log(styles.substring(0,styles.length-1)+'"');
+    return styles.substring(0,styles.length-1)+'"'
+}
 
 function deleteTop() {
     $("#cli-table tbody tr:first").remove();
@@ -282,7 +362,7 @@ function getNextRow() {
 
 
 function error(value) {
-    createLine("Command does not exist: "+value);
+    createLine("Command does not exist: "+value, {'color':'red'});
 }
 
 
@@ -296,6 +376,9 @@ TAB_COUNT = 0;
 PREDICTING = false;
 COUNT = 0;
 MIN_COUNT = 1000;
+HOME = new Directory('~/');
+CUR_DIR = HOME;
+USER = 'root';
 updateMaxCount();
 
 function updateMaxCount() {
@@ -304,8 +387,17 @@ function updateMaxCount() {
     if (MAX_COUNT < MIN_COUNT) {
         MAX_COUNT = MIN_COUNT;
     }
-    console.log(MAX_COUNT);
+    // console.log(MAX_COUNT);
 }
+
+
+PROJECTS = HOME.mkdir('projects');
+PICTURES = HOME.mkdir('pictures');
+RESUME = HOME.mkdir('resume');
+
+RESUME_PDF = RESUME.createLink('resume.pdf', 'doc/CameronKurotoriResume.pdf');
+EXPERIENCE = RESUME.createFile('experience.txt', "This is my experience\nyay!");
+
 
 
 
@@ -316,45 +408,106 @@ bin -- all commands
 
 
 function help() {
-    // console.log("HELP FUNCTION");
+    // // console.log("HELP FUNCTION");
     createLine("Possible commands:");
-    for (var command in Object.keys(functions)) {
+    for (var command in Object.keys(functions).sort()) {
         var option = Object.keys(functions)[command];
-        createLine(fourspaces+option+'-'.padEnd(4)+functions[option].desc);
+        createLine(fourspaces+option+' - '+functions[option].desc);
     }
 }
 
-function whoami() {
-    // console.log("WHO AM I?!");
+function whoami(value_list) {
+    // // console.log("WHO AM I?!");
     createLine("Name: Cameron Kurotori");
     createLine("Phone: 209-206-1529");
     createLine("Email: <a href='mailto:cpkurotori@berkeley.edu'>cpkurotori@berkeley.edu</a>");
 }
 
-function resume() {
-    // console.log("RESUME");
-    createLine("Opening resume...")
-    window.open("doc/CameronKurotoriResume.pdf");
+function resume(value_list) {
+    // // console.log("RESUME");
+    RESUME_PDF.open();
 
 }
 
-function clear() {
+function clear(value_list) {
     $('#cli-table tbody').empty();
     COUNT = 0;
 
 }
 
-function ls() {
-
+function ls(arguments) {
+    for (member in CUR_DIR.members) {
+        if (member[0] != '.') {
+            createLine(member, {'color':'#aaaaaa'});
+        }
+    }
 }
 
+function echo(arguments) {
+    createLine(arguments.join(' '));
+}
+
+function cd(arguments) {
+    var next = CUR_DIR.get(arguments[0]);
+    if (!next) {
+        createLine(arguments[0]+" does not exist.", {'color':'red'})
+    } else if (!next instanceof Directory) {
+        createLine(arguments[0]+" is not a directory.", {'color':'red'})
+    } else {
+        CUR_DIR = next;
+    }
+}
+
+function open_cli(arguments) {
+    if (arguments.length == 0) {
+        return;
+    }
+    console.log(arguments);
+    var file = CUR_DIR.get(arguments[0]);
+    console.log(file);
+    if (!file) {
+        createLine(arguments[0]+" does not exist.", {'color':'red'});
+    } else if (!(file instanceof File)) {
+        createLine(arguments[0] + " cannot be opened.", {'color': 'red'})
+    } else {
+        file.open();
+    }
+}
+
+function cat(arguments) {
+    if (arguments.length == 0) {
+        return;
+    }
+    console.log(arguments);
+    var file = CUR_DIR.get(arguments[0]);
+    console.log(file);
+    if (!file) {
+        createLine(arguments[0]+" does not exist.", {'color':'red'});
+    } else if (!(file instanceof File)) {
+        createLine(arguments[0] + " is not a file.", {'color': 'red'})
+    } else {
+        print_file(file.content);
+    }
+}
+
+function print_file(content) {
+    var lines = content.split('\n');
+    for (var line in lines) {
+        createLine(lines[line], {'color':'white'});
+    }
+}
 
 
 fourspaces = "&nbsp&nbsp&nbsp&nbsp";
 functions = {   'help':createOption("help", "get a list of commands like you see here", help),
                 'whoami':createOption("whoami", "get a list of information about me, Cameron Kurotori",whoami),
                 'clear':createOption("clear", "clear the screen's terminal", clear),
-                'resume':createOption("resume", "look at my resume", resume)
+                'resume':createOption("resume", "look at my resume", resume),
+                'cd':createOption("cd", "change directory", cd),
+                'echo':createOption("echo", "print to terminal", echo),
+                'ls':createOption("ls", "list files and directories", ls),
+                'open':createOption("open", "open files", open_cli),
+                'cat':createOption("cat", "output file content", cat)
 };
 
 
@@ -370,11 +523,10 @@ for (var command in functions) {
 function evaluateLine(value) {
     var value_list = value.split(' ');
     solidify(value);
-
     if (value == "") {
         return createCLI()
     } else if (Object.keys(functions).includes(value_list[0])){
-        functions[value_list[0]].func();
+        functions[value_list[0]].func(value_list.slice(1));
     } else {
         error(value_list[0]);
     }
