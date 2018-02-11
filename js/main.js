@@ -195,7 +195,7 @@ function createCLI() {
         deleteTop();
     }
     var row = getNextRow();
-    var child = "<tr><td class=\"line-start\" row="+row+">&gt&gt&gt&gt&nbsp&nbsp&nbsp</td><td class=\"cli\" row="+row+" id=\"cli-td\"><textarea id=\"cli\" autofocus autocapitalize='none' autocorrect='off' autocomplete='off' wrap=\"soft\" data-gramm_editor=\"false\"></textarea></td></tr>";
+    var child = "<tr><td class=\"line-start\" row="+row+">&gt&gt&gt&gt&nbsp&nbsp&nbsp</td><td class=\"cli\" row="+row+" id=\"cli-td\"><textarea id=\"cli\" autofocus autocapitalize=off autocorrect=off autocomplete=off wrap=\"soft\" data-gramm_editor=\"false\"></textarea></td></tr>";
     $('#cli-table tbody').append(child);
     $('#cli').each(function () {
         this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
