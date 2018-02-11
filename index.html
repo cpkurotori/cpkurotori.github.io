@@ -36,8 +36,14 @@
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.2.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113313496-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+            gtag('config', 'UA-113313496-1');
+        </script>
         <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
             ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
