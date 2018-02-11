@@ -75,6 +75,10 @@ class Directory {
         }
     }
 
+    parent() {
+        return this.members['..'];
+    }
+
     createFile(name, content) {
         this.members[name] = new File(this, name, content);
         return this.members[name];
@@ -298,7 +302,7 @@ function createCLI() {
                     'data-gramm_editor' : false,
                     'wrap' : 'soft'};
 
-    var line_start = "<td class=\"line-start\" row="+row+">"+(USER+':'+CUR_DIR.name)+"$</td>";
+    var line_start = "<td class=\"line-start\" row="+row+">&gt&nbsp"+(USER+':'+CUR_DIR.name)+"$</td>";
     var cli = "<td class=\"cli\" row="+row+" id=\"cli-td\"><textarea id=\"cli\""+optionsToHTML(options)+"></textarea></td>"
     var child = "<tr>"+line_start+cli+"</tr>";
     $('#cli-table tbody').append(child);
@@ -379,6 +383,7 @@ MIN_COUNT = 1000;
 HOME = new Directory('~/');
 CUR_DIR = HOME;
 USER = 'root';
+CUR_PATH = '~/'
 updateMaxCount();
 
 function updateMaxCount() {
@@ -395,8 +400,15 @@ PROJECTS = HOME.mkdir('projects');
 PICTURES = HOME.mkdir('pictures');
 RESUME = HOME.mkdir('resume');
 
-RESUME_PDF = RESUME.createLink('resume.pdf', 'doc/CameronKurotoriResume.pdf');
-EXPERIENCE = RESUME.createFile('experience.txt', "This is my experience\nyay!");
+createFromExisting('experience.txt', RESUME);
+createFromExisting('languages_skills.txt', RESUME);
+
+
+RESUME_PDF = RESUME.createLink('resume.pdf', 'files/CameronKurotoriResume.pdf');
+
+TIMECARD = PROJECTS.mkdir('timecard');
+CHECKIN = PROJECTS.mkdir('checkin');
+DOPPEL = PROJECTS.mkdir('doppel-art');
 
 
 
@@ -444,17 +456,30 @@ function ls(arguments) {
 }
 
 function echo(arguments) {
-    createLine(arguments.join(' '));
+    createLine(arguments.join(' '), {'color':'white'});
 }
 
 function cd(arguments) {
     var next = CUR_DIR.get(arguments[0]);
     if (!next) {
         createLine(arguments[0]+" does not exist.", {'color':'red'})
-    } else if (!next instanceof Directory) {
+    } else if (!(next instanceof Directory)) {
         createLine(arguments[0]+" is not a directory.", {'color':'red'})
     } else {
         CUR_DIR = next;
+        if (CUR_DIR == HOME) {
+            CUR_PATH = '~/'
+        } else {
+            CUR_PATH = CUR_DIR.name;
+            console.log(next);
+            var p = next.parent();
+            while (p != HOME) {
+                console.log(p)
+                CUR_PATH = p.name+CUR_PATH;
+                p = p.parent()
+            }
+            CUR_PATH = '~/'+CUR_PATH;
+        }
     }
 }
 
@@ -490,6 +515,11 @@ function cat(arguments) {
     }
 }
 
+function pwd(arguments) {
+    createLine(CUR_PATH, {'color':'white'});
+}
+
+
 function print_file(content) {
     var lines = content.split('\n');
     for (var line in lines) {
@@ -500,14 +530,15 @@ function print_file(content) {
 
 fourspaces = "&nbsp&nbsp&nbsp&nbsp";
 functions = {   'help':createOption("help", "get a list of commands like you see here", help),
-                'whoami':createOption("whoami", "get a list of information about me, Cameron Kurotori",whoami),
+                'whoami':createOption("whoami", "get a list of my contact information",whoami),
                 'clear':createOption("clear", "clear the screen's terminal", clear),
                 'resume':createOption("resume", "look at my resume", resume),
                 'cd':createOption("cd", "change directory", cd),
                 'echo':createOption("echo", "print to terminal", echo),
                 'ls':createOption("ls", "list files and directories", ls),
                 'open':createOption("open", "open files", open_cli),
-                'cat':createOption("cat", "output file content", cat)
+                'cat':createOption("cat", "output file content", cat),
+                'pwd':createOption('pwd', 'outputs current path', pwd)
 };
 
 
@@ -572,3 +603,17 @@ Array.prototype.equals = function (array) {
 }
 // Hide method from for-in loops
 Object.defineProperty(Array.prototype, "equals", {enumerable: false});
+
+
+function createFromExisting(filename, parent) {
+    $.ajax({
+        type:    "GET",
+        url:     'files/'+filename,
+        success: function(text) {
+            parent.createFile(filename, text);
+        },
+        error:   function() {
+            console.log("file does not exist");
+        }
+    });
+}

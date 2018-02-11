@@ -1,0 +1,5 @@
+theCodeSchool / Code Coach / Pleasanton, CA
+June 2017 - August 2017
+
+- Created lesson plans that would teach students programming while actively engaging them. Brainstormed different approaches of teaching the same concept to accomodate different learning methods and styles.
+- Developed a program that would allow students to visually design a LED Light Matrix before programming a Raspberry Pi 3 (see <a href="https://github.com/cpkurotori/matrix-designer">Project Repository on Github</a>)

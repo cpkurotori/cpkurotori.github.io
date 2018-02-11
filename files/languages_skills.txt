@@ -1,0 +1,17 @@
+<i>Language  -  Proficiency</i>
+Python - 9/10
+C++ - 6/10
+JavaScript - 6/10
+Java - 6/10
+-------------------------------------------
+<strong>Skills/Tools<strong>
+- Git
+- Flask (Python)
+- HTML/CSS
+- JSON
+- SQL (MySQL, SQLite3)
+- MongoDB
+- Linux/UNIX
+- Microsoft Cognitive Services (Face API)
+- Google Cloud Services (App Engine, Storage)
+- AWS (Elasticbean)
