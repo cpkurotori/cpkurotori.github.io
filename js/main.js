@@ -258,7 +258,7 @@ PREDICTING = false;
 
 
 COUNT = 0;
-MIN_COUNT = 7
+MIN_COUNT = 1000;
 updateMaxCount();
 
 function updateMaxCount() {
