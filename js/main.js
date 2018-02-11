@@ -1,55 +1,52 @@
-function TrieNode() {
-    return {'children':{}, 'end':false};
-}
-
-function addWordTrie(node, word){
-    while (word.length > 0) {
-        var letter = word[0];
-        word = word.slice(1);
-        // console.log(letter);
-        if (!Object.keys(node.children).includes(letter)) {
-            // console.log("Creating TrieNode");
-            node.children[letter] = TrieNode();
-        }
-        node = node.children[letter];
+class TrieNode {
+    constructor() {
+        this.children = {};
+        this.end = false;
     }
-    node.end = true;
-}
 
-function getPost(node) {
-    words = [];
-    if (node.end) {
-        var words = [''];
-    } for (var child in node.children) {
-        // console.log(child);
-        var posts = getPost(node.children[child]);
+    addWord(word) {
+        var node = this;
+        for (var char in word) {
+            if (!Object.keys(node.children).includes(word[char])) {
+                node.children[word[char]] = new TrieNode();
+            }
+            node = node.children[word[char]];
+        }
+        node.end = true;
+    }
+
+    getPost() {
+        var words = [];
+        if (this.end) {
+            words.push('');
+        }
+        for (var child in this.children) {
+            var posts = this.children[child].getPost();
+            for (var word in posts) {
+                words.push(child+posts[word]);
+            }
+        }
+        return words;
+    }
+
+    autocomplete(prefix) {
+        var node = this;
+        for (var char in prefix) {
+            console.log(prefix[char]);
+            var letter = prefix[char];
+            if (!Object.keys(node.children).includes(letter)) {
+                return [];
+            }
+            node = node.children[letter];
+        }
+        var words = [];
+        var posts = node.getPost();
         for (var word in posts) {
-            // console.log(child);
-            // console.log(posts[word]);
-            words.push(child+posts[word]);
+            words.push(prefix+posts[word]);
         }
+        return words;
     }
-    // console.log(words);
-    return words;
 }
-
-
-function autocomplete(node, prefix) {
-    for (var char in prefix) {
-        var letter = prefix[char];
-        if (!Object.keys(node.children).includes(letter)) {
-            return [];
-        }
-        node = node.children[letter];
-    }
-    var words = [];
-    var posts = getPost(node);
-    for (var word in posts) {
-        words.push(prefix+posts[word]);
-    }
-    return words;
-}
-
 
 function createOption(name, desc, func) {
     return {'name': name, 'desc':desc, 'func':func}
@@ -74,9 +71,6 @@ $(window).resize(function () {
 });
 
 
-
-
-
 function keypress(event) {
     // console.log(event);
     if (event.keyCode == 13) {
@@ -90,7 +84,7 @@ function keypress(event) {
 }
 
 function keydown(event) {
-    // console.log(event);
+    console.log(event);
     if (event.keyCode == 38) {
         arrowUp();
         event.preventDefault();
@@ -98,7 +92,11 @@ function keydown(event) {
         arrowDown();
         event.preventDefault();
     } else if (event.keyCode == 9) {
-        tabComplete();
+        if (event.shiftKey) {
+            backTabComplete();
+        } else {
+            tabComplete();
+        }
         event.preventDefault();
     }
 }
@@ -133,34 +131,69 @@ function tabComplete() {
     $("#cli").val(value);
 }
 
+function backTabComplete() {
+    var value = getBackCompletion();
+    $("#cli").val(value);
+}
+
 
 function getCompletion() {
-    TAB_COUNT++;
     if (!PREDICTING) {
         PRED_VALUE = $("#cli").val().trim();
     }
-    var predictions = autocomplete(commands, PRED_VALUE).sort();
+    var predictions = commands.autocomplete(PRED_VALUE).sort();
     if (!PREDICTING) {
         PREDICTIONS = predictions;
         PREDICTING = true;
     }
-    // console.log(predictions);
-    // console.log(PREDICTIONS);
-    // console.log(PREDICTING);
-    // console.log(PRED_VALUE);
-    // console.log(TAB_COUNT);
+    TAB_COUNT = (TAB_COUNT + 1) % (PREDICTIONS.length + 1);
+
     if (predictions.equals([])) {
         PREDICTING = false;
         TAB_COUNT = 0;
         PREDICTIONS = [];
         return $("#cli").val().trim();
     }
-    if (TAB_COUNT > PREDICTIONS.length) {
-        TAB_COUNT = 0;
+    if (TAB_COUNT == 0) {
         PREDICTIONS = [];
         PREDICTING = false;
         return '';
     }
+    console.log(predictions);
+    console.log(PREDICTIONS);
+    console.log(PREDICTING);
+    console.log(PRED_VALUE);
+    console.log(TAB_COUNT);
+    return PREDICTIONS[TAB_COUNT - 1];
+}
+
+function getBackCompletion() {
+    if (!PREDICTING) {
+        PRED_VALUE = $("#cli").val().trim();
+    }
+    var predictions = commands.autocomplete(PRED_VALUE).sort();
+    if (!PREDICTING) {
+        PREDICTIONS = predictions;
+        PREDICTING = true;
+    }
+    TAB_COUNT = (((TAB_COUNT - 1) % (PREDICTIONS.length + 1)) + (PREDICTIONS.length + 1))%(PREDICTIONS.length + 1);
+
+    if (predictions.equals([])) {
+        PREDICTING = false;
+        TAB_COUNT = 0;
+        PREDICTIONS = [];
+        return $("#cli").val().trim();
+    }
+    if (TAB_COUNT == 0) {
+        PREDICTIONS = [];
+        PREDICTING = false;
+        return '';
+    }
+    console.log(predictions);
+    console.log(PREDICTIONS);
+    console.log(PREDICTING);
+    console.log(PRED_VALUE);
+    console.log(TAB_COUNT);
     return PREDICTIONS[TAB_COUNT - 1];
 }
 
@@ -195,7 +228,20 @@ function createCLI() {
         deleteTop();
     }
     var row = getNextRow();
-    var child = "<tr><td class=\"line-start\" row="+row+">&gt&gt&gt&gt&nbsp&nbsp&nbsp</td><td class=\"cli\" row="+row+" id=\"cli-td\"><textarea id=\"cli\" autofocus autocapitalize=off autocorrect=off autocomplete=off wrap=\"soft\" data-gramm_editor=\"false\"></textarea></td></tr>";
+    var options = { 'autofocus' : true,
+                    'autocomplete' : 'off',
+                    'autocorrect' : 'off',
+                    'autocapitalize' : 'off',
+                    'spellcheck' : false,
+                    'data-gramm_editor' : false,
+                    'wrap' : 'soft'};
+    var html_options = '';
+    for (option in options) {
+        html_options += ' '+option+'="'+options[option]+'"';
+    }
+    var line_start = "<td class=\"line-start\" row=\"+row+\">&gt&gt&gt&gt&nbsp&nbsp&nbsp</td>"
+    var cli = "<td class=\"cli\" row=\"+row+\" id=\"cli-td\"><textarea id=\"cli\""+html_options+"></textarea></td>"
+    var child = "<tr>"+line_start+cli+"</tr>";
     $('#cli-table tbody').append(child);
     $('#cli').each(function () {
         this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
@@ -222,20 +268,6 @@ function deleteTop() {
     COUNT--;
 }
 
-function evaluateLine(value) {
-    value_list = value.split(' ');
-    solidify(value);
-
-    if (value == "") {
-        return createCLI()
-    } else if (Object.keys(functions).includes(value_list[0])){
-        functions[value_list[0]].func();
-    } else {
-        error(value_list[0]);
-    }
-    createCLI();
-
-}
 
 function getNextRow() {
     var nextrow = $('#cli-table tr:last td:first').attr('row')
@@ -246,17 +278,22 @@ function getNextRow() {
     }
 }
 
-listen();
 
+
+
+function error(value) {
+    createLine("Command does not exist: "+value);
+}
+
+
+
+
+/* GLOBALS */
 HISTORY = [''];
-
 TEMP_BACK_HISTORY = [''];
-
 PREDICTIONS = [];
 TAB_COUNT = 0;
 PREDICTING = false;
-
-
 COUNT = 0;
 MIN_COUNT = 1000;
 updateMaxCount();
@@ -270,9 +307,13 @@ function updateMaxCount() {
     console.log(MAX_COUNT);
 }
 
-function error(value) {
-    createLine("Command does not exist: "+value);
-}
+
+
+
+/*
+bin -- all commands
+ */
+
 
 function help() {
     // console.log("HELP FUNCTION");
@@ -303,25 +344,52 @@ function clear() {
 
 }
 
-help_func = createOption("help", "get a list of commands like you see here", help);
-clear_func = createOption("clear", "clear the screen's terminal", clear);
-whoami_func = createOption("whoami", "get a list of information about me, Cameron Kurotori", whoami)
-resume_func = createOption("resume", "look at my resume", resume);
+function ls() {
 
-
-fourspaces = "&nbsp&nbsp&nbsp&nbsp"
-functions = {'help':help_func, 'whoami':whoami_func, 'clear':clear_func, 'resume':resume_func};
-
-
-createCLI();
-
-commands = TrieNode();
-for (var command in functions) {
-    addWordTrie(commands, command);
 }
 
 
 
+fourspaces = "&nbsp&nbsp&nbsp&nbsp";
+functions = {   'help':createOption("help", "get a list of commands like you see here", help),
+                'whoami':createOption("whoami", "get a list of information about me, Cameron Kurotori",whoami),
+                'clear':createOption("clear", "clear the screen's terminal", clear),
+                'resume':createOption("resume", "look at my resume", resume)
+};
+
+
+commands = new TrieNode();
+for (var command in functions) {
+    commands.addWord(command);
+}
+
+
+
+// EVALUATE THE COMMAND
+
+function evaluateLine(value) {
+    var value_list = value.split(' ');
+    solidify(value);
+
+    if (value == "") {
+        return createCLI()
+    } else if (Object.keys(functions).includes(value_list[0])){
+        functions[value_list[0]].func();
+    } else {
+        error(value_list[0]);
+    }
+    createCLI();
+
+}
+
+
+createCLI();
+listen();
+
+
+/*
+Array Comparisons
+ */
 
 // Warn if overriding existing method
 if(Array.prototype.equals)
