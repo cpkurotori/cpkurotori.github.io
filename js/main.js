@@ -383,7 +383,7 @@ MIN_COUNT = 1000;
 HOME = new Directory('~/');
 CUR_DIR = HOME;
 USER = 'root';
-CUR_PATH = '~/'
+CUR_PATH = '~/';
 updateMaxCount();
 
 function updateMaxCount() {
@@ -410,9 +410,10 @@ TIMECARD = PROJECTS.mkdir('timecard');
 CHECKIN = PROJECTS.mkdir('checkin');
 DOPPEL = PROJECTS.mkdir('doppel-art');
 
+createFromExisting('timecard.txt', TIMECARD);
+TIMECARD_EXE = TIMECARD.createLink('timecard.exe', 'https://timecard-cpk.herokuapp.com');
 
-
-
+createFromExisting('aboutme.txt', HOME);
 
 /*
 bin -- all commands
@@ -430,9 +431,7 @@ function help() {
 
 function whoami(value_list) {
     // // console.log("WHO AM I?!");
-    createLine("Name: Cameron Kurotori");
-    createLine("Phone: 209-206-1529");
-    createLine("Email: <a href='mailto:cpkurotori@berkeley.edu'>cpkurotori@berkeley.edu</a>");
+    HOME.members['aboutme.txt'].open();
 }
 
 function resume(value_list) {
@@ -448,8 +447,14 @@ function clear(value_list) {
 }
 
 function ls(arguments) {
+    var settings = {};
+    for (arg in arguments) {
+        settings[arguments[arg]] = true;
+    }
     for (member in CUR_DIR.members) {
         if (member[0] != '.') {
+            createLine(CUR_DIR.members[member].name, {'color':'#aaaaaa'});
+        } else if (settings['-A']) {
             createLine(member, {'color':'#aaaaaa'});
         }
     }

@@ -1,0 +1,14 @@
+<h3>Cameron Kurotori</h2>
+
+Hello, World! My name is Cameron Kurotori and I am Junior pursuing a Bachelor's of Science in EECS (Electrical Engineering and Computer Science) at the University of California, Berkeley! Go Bears!
+<br>
+I am deeply passionate about programming, if you couldn't already tell from this website, and spend much of my free time working on small personal projects.
+Additionally I am fascinated by the discipline of Computational Neuroscience, Neural Networks and Deep Learning.
+<br>
+Please have a look around at my website. I had a lot of fun creating it and I hope you enjoy exploring the different features I've coded in.
+<br>
+<u>Contact Me!:</u>
+Email: <a href="mailto:cpkurotori@berkeley.edu">cpkurotori@berkeley.edu</a>
+Phone: 209-206-1529
+LinkedIn: <a href="https://www.linkedin.com/in/cameron-kurotori-0ba58344/">in/cameron-kurotori-0ba58344</a>
+GitHub: <a href="https://www.github.com/cpkurotori">/cpkurotori</a>

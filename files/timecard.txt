@@ -1,0 +1,20 @@
+A simple timecard application developed for low scale businesses, with non-profits in mind, for ease of monitoring and logging of clock ins and clock outs.
+<br>
+This application was built with the following tools and technology:
+Python
+Flask
+MongoAlchemy
+Bcrypt
+MongoDB
+HTML/CSS
+<br>
+See the application's repository <a href="https://www.github.com/cpkurotori/timecard">here</a> on GitHub
+See a live demo of the application <a href="https://timecard-cpk.herokuapp.com">here</a> using Heroku
+<br>
+To use the live demo feel free to explore with the following logins:
+<i>Employee ID - Password</i>
+0438828 - ck0438828
+0438829 - zo0438829
+<br>
+Go ahead create new employees, change passwords, clock in/out... Anything!
+<img src="img/timecard/homepage.png" height=300px/>
