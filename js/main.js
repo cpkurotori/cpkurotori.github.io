@@ -114,8 +114,8 @@ class Link extends File {
     }
 }
 
-function createOption(name, desc, func) {
-    return {'name': name, 'desc':desc, 'func':func}
+function createOption(name, desc, func, hide=false) {
+    return {'name': name, 'desc':desc, 'func':func, 'hide':hide};
 }
 
 function listen() {
@@ -423,14 +423,16 @@ bin -- all commands
 function help() {
     // // console.log("HELP FUNCTION");
     createLine("Possible commands:");
-    for (var command in Object.keys(functions).sort()) {
-        var option = Object.keys(functions)[command];
-        createLine(fourspaces+option+' - '+functions[option].desc);
+    for (var command in functions) {
+        if (!functions[command].hide) {
+            createLine(fourspaces + command + ' - ' + functions[command].desc);
+        }
     }
 }
 
 function whoami(value_list) {
     // // console.log("WHO AM I?!");
+    createLine("<img src='img/cameron.jpg' height=200px/>");
     HOME.members['aboutme.txt'].open();
 }
 
@@ -532,10 +534,17 @@ function print_file(content) {
     }
 }
 
+function linkedin(arguments) {
+    createLine("Opening LinkedIn profile...", {'color':'#30a0ff'})
+    //createLine('<div class="LI-profile-badge"  data-version="v1" data-size="medium" data-locale="en_US"' +' data-type="horizontal" data-theme="dark" data-vanity="cpkurotori"><a class="LI-simple-link" href=\'https://www.linkedin.com/in/cpkurotori?trk=profile-badge\'>Cameron Kurotori</a></div>')
+    window.open("https://www.linkedin.com/in/cpkurotori");
+}
+
 
 fourspaces = "&nbsp&nbsp&nbsp&nbsp";
 functions = {   'help':createOption("help", "get a list of commands like you see here", help),
-                'whoami':createOption("whoami", "get a list of my contact information",whoami),
+                'info':createOption("info", "information about Cameron Kurotori (bio and contact info)",whoami),
+                'whoami':createOption("whoami", "whoami alias", whoami, true),
                 'clear':createOption("clear", "clear the screen's terminal", clear),
                 'resume':createOption("resume", "look at my resume", resume),
                 'cd':createOption("cd", "change directory", cd),
@@ -543,7 +552,8 @@ functions = {   'help':createOption("help", "get a list of commands like you see
                 'ls':createOption("ls", "list files and directories", ls),
                 'open':createOption("open", "open files", open_cli),
                 'cat':createOption("cat", "output file content", cat),
-                'pwd':createOption('pwd', 'outputs current path', pwd)
+                'pwd':createOption('pwd', 'outputs current path', pwd),
+                'linkedin':createOption('linkedin', 'show LinkedIn information', linkedin)
 };
 
 
