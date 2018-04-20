@@ -55,7 +55,7 @@ class Directory {
     }
 
     mkdir(name) {
-        this.members[name] = new Directory(name+'/', this);
+        this.members[name] = new Directory(name + '/', this);
         return this.members[name];
     }
 
@@ -67,8 +67,15 @@ class Directory {
             var dir_path = dir.split('/');
             // console.log(dir_path);
             var cur = CUR_DIR;
+            var last = false;
             while (dir_path.length > 0 && cur) {
-                cur = cur.members[dir_path[0]];
+                if (dir_path[0] != "") {        
+                    cur = cur.members[dir_path[0]];
+                } else if (!last) {
+                    last = true;
+                } else {
+                    cur = undefined;
+                }
                 dir_path = dir_path.slice(1);
             }
             return cur;
@@ -478,10 +485,10 @@ function cd(arguments) {
             CUR_PATH = '~/'
         } else {
             CUR_PATH = CUR_DIR.name;
-            console.log(next);
+            // console.log(next);
             var p = next.parent();
             while (p != HOME) {
-                console.log(p)
+                // console.log(p)
                 CUR_PATH = p.name+CUR_PATH;
                 p = p.parent()
             }
