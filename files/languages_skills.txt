@@ -1,8 +1,9 @@
 <i>Language  -  Proficiency</i>
-Python - 9/10
-C++ - 6/10
-JavaScript - 6/10
-Java - 6/10
+Python       - 9/10
+Go           - 8/10
+Java         - 7/10
+C++          - 7/10
+JavaScript   - 7/10
 -------------------------------------------
 <strong>Skills/Tools<strong>
 - Git
@@ -15,3 +16,10 @@ Java - 6/10
 - Microsoft Cognitive Services (Face API)
 - Google Cloud Services (App Engine, Storage)
 - AWS (Elasticbean)
+- IBM Cloud,
+- Kubernetes
+- Docker
+- Grafana
+- InfluxDB
+- Redis
+- JIRA

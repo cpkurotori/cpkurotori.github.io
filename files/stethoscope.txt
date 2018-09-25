@@ -1,0 +1,9 @@
+A full-stack web application that was inspired by the <a href="">Spotify Health Check Model</a>. This is a tool that assists teams in gathering qualitative metrics about team member perspectives on many aspects of the work, production, and culture that is in the team.
+<br>
+This application was built with the following tools and technology:
+Node.JS
+Redis
+HTML/CSS
+<br>
+This application was developed during my time at IBM.
+<img src="img/timecard/homepage.png" height=300px/>

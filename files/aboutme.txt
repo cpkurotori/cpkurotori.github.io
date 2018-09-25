@@ -1,8 +1,8 @@
 <h3>Cameron Kurotori</h2>
 
-Hello, World! My name is Cameron Kurotori and I am Junior pursuing a Bachelor's of Science in EECS (Electrical Engineering and Computer Science) at the University of California, Berkeley! Go Bears!
+Hello, World! My name is Cameron Kurotori and I a Senior pursuing a Bachelor's of Science in EECS (Electrical Engineering and Computer Science) at the University of California, Berkeley! Go Bears!
 <br>
-I am deeply passionate about programming, if you couldn't already tell from this website, and spend much of my free time working on small personal projects.
+I am deeply passionate about programming, if you couldn't already tell from this website, and spend much of my free time working on small personal projects. I have experience with Full Stack development but am also interested in Backend Application Development and Quality and Testing.
 <br>
 Additionally I am fascinated by the discipline of Computational Neuroscience, Neural Networks and Deep Learning.
 <br>

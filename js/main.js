@@ -414,13 +414,17 @@ createFromExisting('languages_skills.txt', RESUME);
 RESUME_PDF = RESUME.createLink('resume.pdf', 'files/CameronKurotoriResume.pdf');
 
 TIMECARD = PROJECTS.mkdir('timecard');
-CHECKIN = PROJECTS.mkdir('checkin');
-DOPPEL = PROJECTS.mkdir('doppel-art');
+// CHECKIN = PROJECTS.mkdir('checkin');
+// DOPPEL = PROJECTS.mkdir('doppel-art');
 
 createFromExisting('timecard.txt', TIMECARD);
 TIMECARD_EXE = TIMECARD.createLink('timecard.exe', 'https://timecard-cpk.herokuapp.com');
 
 createFromExisting('aboutme.txt', HOME);
+
+IBM = PROJECTS.mkdir('ibm');
+createFromExisting('stethoscope.txt', IBM)
+createFromExisting('teamhealthdash.txt', IBM)
 
 /*
 bin -- all commands

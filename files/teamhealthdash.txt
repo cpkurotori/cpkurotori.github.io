@@ -1,0 +1,11 @@
+A backend application that gathers metrics on team production health and displays the data in useful visuals to help teams stay productive and moving forward. This application was built to support easily adding modules for gathering metrics and for wide use for many teams. The implemented modules included GitHub metrics (i.e. Pull Requests, Code Reviews, Merging, Contribution, etc) and metrics detailing the push to production process.
+<br>
+This application was built with the following tools and technology:
+Go
+Grafana
+InfluxDB
+MySQL
+GitHub v3/v4 API
+<br>
+This Application was developed during my time at IBM
+<img src="img/timecard/homepage.png" height=300px/>

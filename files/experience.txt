@@ -1,3 +1,10 @@
+IBM / Software Developer Intern / Austin, TX
+May 2018 - August 2018
+- Worked in the Hybrid Cloud Business Unit on the Key Protect service that handles encryption of customer data encryption keys
+- Scrum master during three two-week sprints
+- Worked on opened issues that were found internally (debug, fix, and test)
+- Created 2 web applications to assist squads in evaluating the productivity health of the team and its members
+
 theCodeSchool / Code Coach / Pleasanton, CA
 June 2017 - August 2017
 
