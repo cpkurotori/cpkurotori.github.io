@@ -6,4 +6,3 @@ Redis
 HTML/CSS
 <br>
 This application was developed during my time at IBM.
-<img src="img/timecard/homepage.png" height=300px/>

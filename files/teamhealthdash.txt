@@ -8,4 +8,3 @@ MySQL
 GitHub v3/v4 API
 <br>
 This Application was developed during my time at IBM
-<img src="img/timecard/homepage.png" height=300px/>
