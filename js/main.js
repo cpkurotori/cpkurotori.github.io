@@ -380,17 +380,18 @@ function error(value) {
 
 
 /* GLOBALS */
-HISTORY = [''];
-TEMP_BACK_HISTORY = [''];
-PREDICTIONS = [];
-TAB_COUNT = 0;
-PREDICTING = false;
-COUNT = 0;
-MIN_COUNT = 1000;
-HOME = new Directory('~/');
-CUR_DIR = HOME;
-USER = 'root';
-CUR_PATH = '~/';
+var HISTORY = [''];
+var TEMP_BACK_HISTORY = [''];
+var PREDICTIONS = [];
+var TAB_COUNT = 0;
+var PREDICTING = false;
+var COUNT = 0;
+const MIN_COUNT = 1000;
+const HOME = new Directory('~/');
+var CUR_DIR = HOME;
+const USER = 'root';
+const CUR_PATH = '~/';
+const VERSION = '1.17.08.19'
 updateMaxCount();
 
 function updateMaxCount() {
@@ -564,7 +565,8 @@ functions = {   'help':createOption("help", "get a list of commands like you see
                 'open':createOption("open", "open files", open_cli),
                 'cat':createOption("cat", "output file content", cat),
                 'pwd':createOption('pwd', 'outputs current path', pwd),
-                'linkedin':createOption('linkedin', 'show LinkedIn information', linkedin)
+                'linkedin':createOption('linkedin', 'show LinkedIn information', linkedin),
+                'version':createOption('version', 'show version of this terminal', function(){createLine(VERSION, {'color':'white'})})
 };
 
 
@@ -643,3 +645,4 @@ function createFromExisting(filename, parent) {
         }
     });
 }
+
