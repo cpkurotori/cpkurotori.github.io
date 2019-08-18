@@ -391,7 +391,8 @@ const HOME = new Directory('~/');
 var CUR_DIR = HOME;
 const USER = 'root';
 const CUR_PATH = '~/';
-const VERSION = '1.17.08.19'
+createFromExisting('VERSION.md', HOME)
+
 updateMaxCount();
 
 function updateMaxCount() {
@@ -435,7 +436,8 @@ bin -- all commands
 function help() {
     // // console.log("HELP FUNCTION");
     createLine("Possible commands:");
-    for (var command in functions) {
+    for (var num in Object.keys(functions)) {
+        var command = Object.keys(functions).sort()[num]
         if (!functions[command].hide) {
             createLine(fourspaces + command + ' - ' + functions[command].desc);
         }
@@ -467,7 +469,7 @@ function ls(arguments) {
     }
     for (member in CUR_DIR.members) {
         if (member[0] != '.') {
-            createLine(CUR_DIR.members[member].name, {'color':'#aaaaaa'});
+            createLine(CUR_DIR.members[member].naGme, {'color':'#aaaaaa'});
         } else if (settings['-A']) {
             createLine(member, {'color':'#aaaaaa'});
         }
@@ -552,6 +554,10 @@ function linkedin(arguments) {
     window.open("https://www.linkedin.com/in/cpkurotori");
 }
 
+function version() {
+    var file = HOME.members['VERSION.md']
+    print_file(file.content)
+}
 
 fourspaces = "&nbsp&nbsp&nbsp&nbsp";
 functions = {   'help':createOption("help", "get a list of commands like you see here", help),
@@ -566,7 +572,7 @@ functions = {   'help':createOption("help", "get a list of commands like you see
                 'cat':createOption("cat", "output file content", cat),
                 'pwd':createOption('pwd', 'outputs current path', pwd),
                 'linkedin':createOption('linkedin', 'show LinkedIn information', linkedin),
-                'version':createOption('version', 'show version of this terminal', function(){createLine(VERSION, {'color':'white'})})
+                'version':createOption('version', 'show version of this terminal', version)
 };
 
 
