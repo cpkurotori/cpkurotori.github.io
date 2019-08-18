@@ -1,12 +1,12 @@
 <h3>Cameron Kurotori</h2>
 
-Hello, World! My name is Cameron Kurotori and I a Senior pursuing a Bachelor's of Science in EECS (Electrical Engineering and Computer Science) at the University of California, Berkeley! Go Bears!
+Hello, World! My name is Cameron Kurotori and I am a Fullstack Software Developer with IBM's <a href='https://cloud.ibm.com/catalog/services/key-protect'>Key Protect</a> Team. I recently graduated with honors from the University of California, Berkeley, with a Bachelor's of Science in Electrical Engineering and Computer Science (EECS). Go Bears!
 <br>
-I am deeply passionate about programming, if you couldn't already tell from this website, and spend much of my free time working on small personal projects. I have experience with Full Stack development but am also interested in Backend Application Development and Quality and Testing.
+While at Cal, I was an officer for the <a href='https://hkn.mu'>Mu Chapter of IEEE-HKN, the EECS Honors Society</a> and still actively participate in discussions as well as events that I am able to attend when I get the chance. I am deeply passionate about programming, if you couldn't already tell from this website, and spend much of my free time working on small personal projects. I have experience with Full Stack development but am also interested in Backend Application Development and Quality and Testing.
 <br>
 Additionally I am fascinated by the discipline of Computational Neuroscience, Neural Networks and Deep Learning.
 <br>
-Please have a look around at my website. I had a lot of fun creating it and I hope you enjoy exploring the different features I've coded in.
+Please have a look around at my website. I had a lot of fun creating it and I hope you enjoy exploring the different features I've coded in. Additionally all the code for this website is frontend and can be viewed in the source or at <a href="https://www.github.com/cpkurotori/cpkurotori.github.io">Github</a>.
 <br>
 <u>Contact Me!:</u>
 <br>
