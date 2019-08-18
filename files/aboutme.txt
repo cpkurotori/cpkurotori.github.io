@@ -6,7 +6,7 @@ While at Cal, I was an officer for the <a href='https://hkn.mu' target='_blank'>
 <br>
 Additionally I am fascinated by the discipline of Computational Neuroscience, Neural Networks and Deep Learning.
 <br>
-Please have a look around at my website. I had a lot of fun creating it and I hope you enjoy exploring the different features I've coded in. Additionally all the code for this website is frontend and can be viewed in the source or at <a href="https://www.github.com/cpkurotori/cpkurotori.github.io" target='_blank'>Github</a>.
+Please have a look around at my website. I had a lot of fun creating it and I hope you enjoy exploring the different features I've coded in. Additionally all the code for this website is frontend and can be viewed in the source code.
 <br>
 <u>Contact Me!:</u>
 <br>
