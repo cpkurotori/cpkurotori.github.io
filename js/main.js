@@ -390,7 +390,7 @@ const MIN_COUNT = 1000;
 const HOME = new Directory('~/');
 var CUR_DIR = HOME;
 const USER = 'root';
-const CUR_PATH = '~/';
+var CUR_PATH = '~/';
 createFromExisting('VERSION.md', HOME)
 
 updateMaxCount();
@@ -469,7 +469,7 @@ function ls(arguments) {
     }
     for (member in CUR_DIR.members) {
         if (member[0] != '.') {
-            createLine(CUR_DIR.members[member].naGme, {'color':'#aaaaaa'});
+            createLine(CUR_DIR.members[member].name, {'color':'#aaaaaa'});
         } else if (settings['-A']) {
             createLine(member, {'color':'#aaaaaa'});
         }
