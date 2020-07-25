@@ -1,3 +1,11 @@
+IBM / Backend Software Developer / Austin, TX
+August 2019 - Present
+- Works in the IBM Cloud Business Unit on the Key Protect service that handles encryption of customer data encryption keys
+- Participates in active design of features, database tables and code
+- Places strong emphasis on abstraction in the code base to allow for easier development of new features as well as good modular programming for potential refactors
+- Mainly focuses on development of new features as well as maintaining current codebase
+- Helps with automation and operations within the team
+
 IBM / Software Developer Intern / Austin, TX
 May 2018 - August 2018
 - Worked in the Hybrid Cloud Business Unit on the Key Protect service that handles encryption of customer data encryption keys

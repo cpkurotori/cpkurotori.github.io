@@ -1,25 +1,31 @@
 <i>Language  -  Proficiency</i>
+Go           - 9/10
 Python       - 9/10
-Go           - 8/10
+SQL          - 8/10
+Shell        - 7/10
 Java         - 7/10
 C++          - 7/10
 JavaScript   - 7/10
 -------------------------------------------
 <strong>Skills/Tools<strong>
 - Git
+- IBM Cloud
+- MySQL/SQLite3
+- PostgreSQL
+- JSON
+- YAML
 - Flask (Python)
 - HTML/CSS
-- JSON
-- SQL (MySQL, SQLite3)
 - MongoDB
 - Linux/UNIX
 - Microsoft Cognitive Services (Face API)
 - Google Cloud Services (App Engine, Storage)
 - AWS (Elasticbean)
-- IBM Cloud,
 - Kubernetes
 - Docker
 - Grafana
 - InfluxDB
 - Redis
 - JIRA
+- Travis CI
+- Jenkins
