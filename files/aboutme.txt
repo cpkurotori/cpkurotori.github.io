@@ -4,14 +4,13 @@ Hello, World! My name is Cameron Kurotori and I am a Backend Software Developer 
 <br>
 While at Cal, I was an officer for the <a href='https://hkn.mu' target='_blank'>Mu Chapter of IEEE-HKN, the EECS Honors Society</a> and still actively participate in discussions as well as events that I am able to attend when I get the chance. I am deeply passionate about programming, if you couldn't already tell from this website, and spend much of my free time working on small personal projects. I have experience with Full Stack development but am also interested in Backend Application Development and Quality and Testing.
 <br>
-Additionally I am fascinated by the discipline of Computational Neuroscience, Neural Networks and Deep Learning.
 <br>
 Please have a look around at my website. I had a lot of fun creating it and I hope you enjoy exploring the different features I've coded in. Additionally all the code for this website is frontend and can be viewed in the source code.
 <br>
 <u>Contact Me!:</u>
 <br>
-Email: <a href="mailto:cpkurotori@berkeley.edu">cpkurotori@berkeley.edu</a>
-Phone: 209-206-1529
+Email: <a href="mailto:cpkurotori@gmail.com">cpkurotori@gmail.com</a>
+Phone: 925-623-6116
 LinkedIn: <a href="https://www.linkedin.com/in/cpkurotori" target="_blank">in/cpkurotori</a>
 GitHub: <a href="https://www.github.com/cpkurotori" target="_blank">/cpkurotori</a>
 <br>
