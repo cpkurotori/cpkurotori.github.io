@@ -559,6 +559,10 @@ function version() {
     print_file(file.content)
 }
 
+function mc() {
+    window.open("/mc.html")
+}
+
 fourspaces = "&nbsp&nbsp&nbsp&nbsp";
 functions = {   'help':createOption("help", "get a list of commands like you see here", help),
                 'info':createOption("info", "information about Cameron Kurotori (bio and contact info)",whoami),
@@ -572,7 +576,8 @@ functions = {   'help':createOption("help", "get a list of commands like you see
                 'cat':createOption("cat", "output file content", cat),
                 'pwd':createOption('pwd', 'outputs current path', pwd),
                 'linkedin':createOption('linkedin', 'show LinkedIn information', linkedin),
-                'version':createOption('version', 'show version of this terminal', version)
+                'version':createOption('version', 'show version of this terminal', version),
+                'mc': createOption('mc', 'server boot', mc, true),
 };
 
 
