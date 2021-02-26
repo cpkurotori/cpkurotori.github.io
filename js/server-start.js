@@ -27,7 +27,7 @@ $(document).ready(() => {
             },
             error: function (result) {
                 console.log(result);
-                $("#main").html(`<code>${result.responseText}<code>`);
+                $("#main").html(`<code>${result.responseText}<code><br><p>Reload this page to try again!</p>`);
             }
         });  
     }
