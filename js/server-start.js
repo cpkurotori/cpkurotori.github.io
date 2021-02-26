@@ -12,14 +12,13 @@ $(document).ready(() => {
                 console.log(result);
                 let output = `<h2>Success!</h2>`;
                 if (state == "start") {
-                    output += "<br><p>The server should start up any moment. " +
-                        "The server will turn off automatically after 12 hours. " +
-                        "However, if you stop playing for an extended period of time, " +
-                        "it would be wonderful " +
-                        "if you could run the `/stop` command in the chat and come " +
-                        "back <a href='https://camkuro.com/mc.html'>here</a> and stop the server. " +
-                        "This will help me limit the costs. If you forget, it's literally not a problem! " +
-                        "(as a reference it only costs 4 cents per hour that the server is running :P)";
+                    output += "<br><p>The server should start up any moment.<br><br>" +
+                        "The server will turn off automatically after 12 hours.<br><br>" +
+                        "<br><strong>However</strong>, if you stop playing for an <i>extended period of time</i>, " +
+                        "it would be wonderful if you could run the `/stop` command in the chat and come " +
+                        "back <a href='https://camkuro.com/mc.html'>here</a> and stop the server.<br><br>" +
+                        "This will help me limit the costs :) <br><br><i>If you forget, it's literally not a problem!" +
+                        "(as a reference it only costs 4 cents per hour that the server is running :P)</i>";
                 } else if (state == "stop") {
                     output += "<br><p>Thank you so much for stopping the server. I love you <3</p>";
                 }
