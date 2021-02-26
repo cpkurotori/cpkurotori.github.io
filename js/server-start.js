@@ -24,6 +24,11 @@ $(document).ready(() => {
                 }
                 output += `<br><br><code style='color:rgb(232,232,232)'>${JSON.stringify(result)}</code>`
                 $("#main").html(output);
+                if (state == "start") {
+                    $("#stop").click(function () {
+                        create_action("stop");
+                    });
+                }
             },
             error: function (result) {
                 console.log(result);
