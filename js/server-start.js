@@ -12,8 +12,9 @@ $(document).ready(() => {
                 console.log(result);
                 let output = `<h2>Success!</h2>`;
                 if (state == "start") {
-                    output += "<p>The server should start up any moment. and will turn off automatically after 12 hours.<br><br>" +
-                        "<br><strong>However</strong>, if you stop playing for an <i>extended period of time</i>, " +
+                    output += "<p>The server should start up any moment. and will turn off automatically after 12 hours. "+
+                        "Refresh this page to see the current status. If after a minute it is still \"stopped\", press \"Start\" again."+
+                        "<br><br><br><strong>However</strong>, if you stop playing for an <i>extended period of time</i>, " +
                         "it would be wonderful if you could run the `/stop` command in the chat and come " +
                         "back here (you can also just refresh the page) and stop the server.<br><br>" +
                         "This will help me limit the costs :) <br><br><i>If you forget, it's literally not a problem!" +
