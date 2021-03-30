@@ -411,7 +411,7 @@ RESUME = HOME.mkdir('resume');
 
 createFromExisting('experience.txt', RESUME);
 createFromExisting('languages_skills.txt', RESUME);
-
+createFromExisting('accolades.txt', RESUME);
 
 RESUME_PDF = RESUME.createLink('resume.pdf', 'files/CameronKurotoriResume.pdf');
 

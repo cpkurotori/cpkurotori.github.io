@@ -1,0 +1,3 @@
+<h2>Accolades</h2>
+<strong>Outstanding Technical Achievement Award</strong> - Key LifeCycle Management for IBM Cloud, <i>November 1, 2020</i><br>
+<p>Member of one of the 21 four-person teams under the IBM Cloud business unit to receive this award for work related the design and implementation of interservice operability and notification management of key lifecycles.</p>
