@@ -1,2 +1,6 @@
+<strong>Outstanding Technical Achievement Award</strong> - Multi Channel Scheduler for IBM Quantum, <i>May 24, 2024</i><br>
+<strong><a href="">Patent #12,010,229 Durability Enforcement of Cryptographic Keys in a Key Management System</a></strong>, <i>filed May 25, 2021, issued June 11, 2024</i><br>
 <strong>Outstanding Technical Achievement Award</strong> - Key LifeCycle Management for IBM Cloud, <i>November 1, 2020</i><br>
 <p>Member of one of the 21 four-person teams under the IBM Cloud business unit to receive this award for work related the design and implementation of interservice operability and notification management of key lifecycles.</p>
+<strong>IBM Recognition Experience 2021 Honoree</strong>, <i>June 15, 2021</i><br>
+<p>Celebrated as a top performer (top 1%) in 2020 in a talent pool of all IBM employees</p>

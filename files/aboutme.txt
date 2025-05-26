@@ -1,6 +1,6 @@
 <h2>Cameron Kurotori</h2>
 
-Hello, World! My name is Cameron Kurotori and I am a Backend Software Developer with IBM's <a href='https://cloud.ibm.com/catalog/services/key-protect' target='_blank'>Key Protect</a> Team. I graduated with honors, class of 2019, from the University of California, Berkeley, with a Bachelor's of Science in Electrical Engineering and Computer Science (EECS). Go Bears!
+Hello, World! My name is Cameron Kurotori and I am a Senior Backend Software Engineer for the <a href='https://quantum.cloud.ibm.com'>IBM Quantum/Qiskit Runtime</a> cloud platform. I graduated with honors, class of 2019, from the University of California, Berkeley, with a Bachelor's of Science in Electrical Engineering and Computer Science (EECS). Go Bears!
 <br>
 While at Cal, I was an officer for the <a href='https://hkn.mu' target='_blank'>Mu Chapter of IEEE-HKN, the EECS Honors Society</a> and still occasionally participate in discussions as well as events that I am able to attend when I get the chance. I am deeply passionate about programming, if you couldn't already tell from this website, and spend much of my free time working on small personal projects. I have experience with backend application development, including REST API's, and enjoy solving complicated problems with unique and innovative solutions. I am passionate about creating tools that better equip software engineers and developers with their daily tasks. 
 <br>

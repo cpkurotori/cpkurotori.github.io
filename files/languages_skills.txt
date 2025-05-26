@@ -1,31 +1,35 @@
 <i>Language  -  Proficiency</i>
-Go           - 9/10
+Go           - 10/10
 Python       - 9/10
 SQL          - 8/10
 Shell        - 7/10
+JavaScript   - 7/10
 C++          - 6/10
-JavaScript   - 5/10
 Java         - 4/10
 -------------------------------------------
 <strong>Skills/Tools<strong>
+- AWS
+- Docker
+- FaaS
 - Git
-- IBM Cloud
-- MySQL/SQLite3
-- PostgreSQL
-- JSON
-- YAML
-- Flask (Python)
-- HTML/CSS
-- MongoDB
-- Linux/UNIX
-- AWS 
-- Kubernetes
-- Docker
+- GitHub (API)
 - Grafana
-- Redis
-- JIRA
+- graphQL
+- gRPC
+- Helm
+- IBM Cloud
+- Istio
+- Jenkins/Groovy
+- Kubernetes/Openshift
+- Linux
+- NATS
+- NoSQL (Redis, MongoDB)
+- Opentracing (Jaeger)
+- PGBouncer
+- Pagerduty
+- PostgreSQL/MySQL
+- Prometheus
+- REST (OpenAPI)
+- Slack (API)
+- Terraform
 - Travis CI
-- Jenkins
-- Kubernetes
-- Docker
-- Bash

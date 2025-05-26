@@ -1,20 +1,54 @@
-IBM / Backend Software Developer / Austin, TX
-August 2019 - Present
-- Works in the IBM Cloud Business Unit on the Key Protect service that handles encryption of customer data encryption keys
+IBM / Advisory Software Engineer (Band 8), Backend / Remote
+May 2022 - Present
+<br>
+- Senior developer for the Qiskit Runtime service that provides the REST API for researchers, educators and other
+quantum computing professionals and enthusiasts to submit quantum workloads to IBM’s expansive fleet of state
+of the art quantum computers
+- Manage and maintain the service including developing new features and troubleshooting and fixing bugs
+- Participate and manage the on-call rotation schedule to monitor the service and respond to customer impacting
+events in a timely manner while we prepare to transition to a GA service
+- Lead and owned the design and implementation for various internal and external features of the service
+-- Bring Your Own Bucket (BYOB): enables processing of larger quantum circuits built on top of the IBM Cloud Object Storage service
+-- service configuration audit events: enables trackability of service configuration changes to assist in troubleshooting customer issues
+-- administrator APIs for managing account
+onboarding and backend lifecycle
+- DevOps Focal
+-- Point of contact between our infrastructure team and developers
+-- Oversee the design and implementation of DevOps tasks for our team including CI/CD and our developer
+resources (i.e. kubernetes cluster, database) and automation
+- Assist in the design and implementation of the migration of our platform to IBM Cloud and bring my extensive
+cloud experience to align with IBM Cloud standards and make the transition for our team smoothe
+<br>
+IBM / Staff Softwre Engineer (Band 7), Backend / Remote
+April 2020 - May 2022
+<br>
+- Senior developer for the Key Protect platform service
+- Maintained my responsibilities as an Associate Software Engineer with the addition of more senior responsibilities
+- Mentored junior developers with a particular focus on clean, maintainable, and thoroughly tested code
+- Lead and owned the design and implementation for various external features
+-- key rings
+-- key lifecycle event sync
+-- data durability
+<br>
+IBM / Associate Software Engineer (Band 6), Backend / Austin, TX
+August 2019 - April 2020
+<br>
+- Worked in the IBM Cloud Business Unit on the Key Protect service that handles encryption of customer data encryption keys
 - Participates in active design of features, database tables and code
 - Places strong emphasis on abstraction in the code base to allow for easier development of new features as well as good modular programming for potential refactors
 - Mainly focuses on development of new features as well as maintaining current codebase
 - Helps with automation and operations within the team
-
+<br>
 IBM / Software Developer Intern / Austin, TX
 May 2018 - August 2018
+<br>
 - Worked in the Hybrid Cloud Business Unit on the Key Protect service that handles encryption of customer data encryption keys
 - Scrum master during three two-week sprints
 - Worked on opened issues that were found internally (debug, fix, and test)
 - Created 2 web applications to assist squads in evaluating the productivity health of the team and its members
-
+<br>
 theCodeSchool / Code Coach / Pleasanton, CA
 June 2017 - August 2017
-
+<br>
 - Created lesson plans that would teach students programming while actively engaging them. Brainstormed different approaches of teaching the same concept to accomodate different learning methods and styles.
 - Developed a program that would allow students to visually design a LED Light Matrix before programming a Raspberry Pi 3 (see <a href="https://github.com/cpkurotori/matrix-designer">Project Repository on Github</a>)
